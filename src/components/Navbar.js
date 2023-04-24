@@ -2,9 +2,49 @@ import React, { useEffect, useState } from 'react'
 
 export default function Navbar() {
 
-  const [scroll, setScroll] = useState(0);
+  const [scrollY, setScrollY] = useState(0);
+
+
+  useEffect(() => {
+    function handleScroll() {
+      setScrollY(window.scrollY);
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+
+
+  }, []);
+
+  useEffect(() => {
+    let navbar = document.querySelector('nav');
+    navbar.classList.toggle('sticky' , scrollY > 100);
+  } , [scrollY])
+
+  useEffect(() => {
+
+    let menu = document.querySelector('.menu');
+    let menuIcon = document.querySelector('#menuIcon');
   
-  let navbar = document.querySelector('nav');
+    menuIcon.onclick = ()=>{
+      menuIcon.classList.toggle('bx-x');
+      menu.classList.toggle('active1');
+    }
+    
+    menuIcon.classList.remove('bx-x');
+    menu.classList.remove('active1');
+ } , [])
+
+
+ useEffect(()=>{
+   let menu = document.querySelector('.menu');
+   let menuIcon = document.querySelector('#menuIcon');
+   menuIcon.classList.remove('bx-x');
+   menu.classList.remove('active1');
+ })
+
 
 
   return (
@@ -20,7 +60,7 @@ export default function Navbar() {
             <li className="menu-list"><a href="#contact" className="menu-a">Contact</a></li>
         </ul>
         <div className="menu-icon">
-          <box-icon color="white" size="3.5rem" name='menu-alt-right'></box-icon>
+          <i class='bx bx-menu-alt-right' id='menuIcon'></i>
         </div>
     </nav>
   )

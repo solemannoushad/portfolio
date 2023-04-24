@@ -7,8 +7,26 @@ import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { useEffect } from 'react';
+import ScrollReveal from 'scrollreveal'
 
 function App() {
+
+  useEffect(() => {
+
+    ScrollReveal({
+      // reset: true,
+      distance: '80px',
+      duration: 1500,
+      delay: 150 
+     });
+  
+    ScrollReveal().reveal('.heading, .left-home' , {origin: 'top'});
+    ScrollReveal().reveal('.services-container, .right-home, .portfolio-box , .contact form', {origin: 'bottom'});
+    ScrollReveal().reveal('.left-home h1 , .about-image', {origin: 'left'});
+    ScrollReveal().reveal('.left-home p , .about-content', {origin: 'right'});
+  } , [])
+
+
 
   useEffect(() => {
     let sections = document.querySelectorAll('section');
@@ -32,8 +50,6 @@ function App() {
       })
     }
 
-
-    
   } , [])
   
 
