@@ -27,6 +27,19 @@ body{
     color: var(--text-color);
 }
 
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
 section{
     min-height: 100vh;
     padding: 10rem 9% 2rem;
@@ -214,6 +227,8 @@ span{
 
 .services-box{
     flex: 1 1 3rem;
+    /* width: 350px;
+    height: 350px; */
     background: var(--second-bg-color);
     padding: 3rem 2rem 4rem;
     border-radius: 2rem;
@@ -251,9 +266,10 @@ span{
 }
 
 .portfolio-container{
-    display: grid;
-    grid-template-columns: repeat(3 , 1fr);
+    display: flex;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 2.5rem;
 }
 
@@ -263,6 +279,8 @@ span{
     box-shadow: 0 0 1rem var(--bg-color);
     overflow: hidden;
     display: flex;
+    width: 34rem;
+    height: 24rem;
 }
 
 .portfolio-box img{
@@ -280,7 +298,7 @@ span{
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0,0,0,.1), var(--main-color));
+    background: linear-gradient(rgba(0,0,0,.7), var(--main-color));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -289,6 +307,7 @@ span{
     text-align: center;
     transform: translateY(100%);
     transition: .5s ease;
+    cursor: default;
 }
 
 .portfolio-box:hover .portfolio-layer{
@@ -358,6 +377,7 @@ form textarea{
 
 form .btn{
     margin-top: 2rem;
+    cursor: pointer;
 }
 
 
@@ -391,6 +411,41 @@ form .btn{
 .footer-icon-top a i{
     font-size: 2.4rem;
     color: var(--second-bg-color);
+}
+
+
+.skils{
+    background: var(--second-bg-color);
+}
+
+.notificationMain{
+    position: fixed;
+    top: 2rem;
+    right: -20rem;
+    z-index: 99999;
+    background-color: var(--main-color);
+    box-shadow: 0 0 1rem var(--main-color);
+    color: var(--bg-color);
+    font-weight: 600;
+    border-radius: .5rem;
+    padding: 2rem;
+    font-size: 1.5rem;
+    cursor: default;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: .5s ease;
+}
+
+.notificationMain i{
+    font-size: 2.6rem;
+    color: var(--bg-color);
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+.visible{
+    right: 2rem !important;
 }
 
 
@@ -509,15 +564,7 @@ form .btn{
     }
 }
 
-@media(max-width : 365px){
-
-    .right-home .img{
-        width: 90vw;
-    }
-    
-    .about-image img{
-        width: 90vw;
-    }
+@media(max-width : 512px){
 
     .footer{
         flex-direction: column-reverse;
@@ -526,5 +573,15 @@ form .btn{
     .footer-text p{
         text-align: center;
         margin-top: 2rem;
+    }
+}
+@media(max-width : 365px){
+
+    .right-home .img{
+        width: 90vw;
+    }
+    
+    .about-image img{
+        width: 90vw;
     }
 }

@@ -8,6 +8,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { useEffect } from 'react';
 import ScrollReveal from 'scrollreveal'
+import Notification from './components/Notification';
 
 function App() {
 
@@ -61,6 +62,7 @@ function App() {
       <Portfolio/>
       <Contact/>
       <Footer/>
+      <Notification/>
     </>
   );
 }

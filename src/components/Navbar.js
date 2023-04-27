@@ -50,7 +50,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
         <div className="logo">
-            Portfolio.
+            Portfolio<span>.</span>
         </div>
         <ul className="menu">
             <li className="menu-list"><a href="#home" className="menu-a active">Home</a></li>
