@@ -2,9 +2,9 @@ import React from 'react'
 import p1 from '../images/p1.jpeg'
 import p2 from '../images/p2.jpg'
 import p3 from '../images/p3.jpg'
-import p4 from '../images/p4.png'
 import p5 from '../images/p5.jpeg'
-import p6 from '../images/p6.png'
+import p7 from '../images/p7.png'
+import p8 from '../images/p8.png'
 
 export default function Portfolio() {
 
@@ -32,24 +32,23 @@ export default function Portfolio() {
         },
         {
             key: 3,
-            image: p4,
-            title: 'Portfolio Website',
-            description: 'Develop a complete portfolio website for myself in React.',
-            link: 'https://github.com/solemannoushad/portfolio'
+            image: p8,
+            title: 'Cab Booking App',
+            description: 'A full stack cab booking app build in react native, express Js and Firebase.',
         },
         {
             key: 4,
+            image: p7,
+            title: 'Restaurant App',
+            description: 'A full stack restaurant food ordering app build in react native and Firebase.',
+            link: 'https://github.com/solemannoushad/foodie-moodie-app'
+        },
+        {
+            key: 5,
             image: p5,
             title: 'CRUD Web App',
             description: 'CRUD web app using MERN with complete backend along with user authentication.',
             link: 'https://github.com/solemannoushad/CRUD-using-MERN'
-        },
-        {
-            key: 5,
-            image: p6,
-            title: 'CRUD in php',
-            description: 'CRUD website using php and mySql.',
-            link: 'https://github.com/solemannoushad/CRUD-in-PHP'
         },
     ]
 

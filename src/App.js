@@ -6,11 +6,18 @@ import Services from './components/Services';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import ScrollReveal from 'scrollreveal'
 import Notification from './components/Notification';
+import Loading from './components/Loading';
 
 function App() {
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(false);
+  } , [])
 
   useEffect(() => {
 
@@ -56,6 +63,7 @@ function App() {
 
   return (
     <>
+      {loading && <Loading/>}
       <Header/>
       <About/>
       <Services/>
